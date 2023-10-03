@@ -4,7 +4,7 @@ export default async function getWeather(apiKey, coordinates) {
   };
 
   const weatherData = await (
-    await fetch(getBaseUrl("forecast", "days=3"), { mode: "cors" })
+    await fetch(getBaseUrl("forecast", "days=3&hours"), { mode: "cors" })
   ).json();
 
   return weatherData;

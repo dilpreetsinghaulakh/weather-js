@@ -1,6 +1,8 @@
+import mainUi from "./components/main.js";
 import getLocation from "./getLocation.js";
 import getProcessedWeather from "./getProcessedWeather";
 import getWeather from "./getWeather";
+import "./style.css"
 
 const apiKey = "5cb842d772004033908123421231509";
 var siUnits = true;
@@ -14,3 +16,6 @@ getLocation().then((coordinates) => {
       console.log(error);
     });
 });
+
+
+mainUi()
