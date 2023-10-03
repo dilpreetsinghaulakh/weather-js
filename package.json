@@ -1,0 +1,27 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "Simple JavaScript Weather Page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dilpreetsinghaulakh/weather-js.git"
+  },
+  "author": "Dilpreet Singh",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dilpreetsinghaulakh/weather-js/issues"
+  },
+  "homepage": "https://github.com/dilpreetsinghaulakh/weather-js#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
