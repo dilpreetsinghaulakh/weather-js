@@ -29,6 +29,33 @@ export default function (siUnitsEnable, weatherData) {
         conditionCode: data.condition.code,
       });
     }
+  } else {
+    current = {
+      temp: weatherData.current.temp_f,
+      conditionCode: weatherData.current.condition.code,
+      condition: weatherData.current.condition.text,
+      humidity: weatherData.current.humidity,
+      isDay: weatherData.current.is_day,
+      feelsLike: weatherData.current.feelslike_f,
+      uv: weatherData.current.uv,
+      precipitation: weatherData.current.precip_in,
+      pressure: weatherData.current.pressure_in,
+      visibility: weatherData.current.vis_miles,
+      wind: weatherData.current.wind_mph,
+      windDirection: weatherData.current.wind_dir,
+      windDegree: weatherData.current.wind_degree,
+    };
+
+    for (let i = 0; i < 3; i++) {
+      const data = weatherData.forecast.forecastday[i].day;
+      days.push({
+        avgTemp: data.avgtemp_f,
+        minTemp: data.mintemp_f,
+        maxTemp: data.maxtemp_f,
+        condition: data.condition.text,
+        conditionCode: data.condition.code,
+      });
+    }
   }
 
   let location = {
