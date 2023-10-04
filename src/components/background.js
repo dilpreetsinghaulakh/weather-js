@@ -1,7 +1,6 @@
 export default function background(condition) {
-  const content = document.getElementById("content");
-
   const background = document.createElement("div");
+  background.className = "content-background-container";
 
   const backgroundGradient = document.createElement("div");
   backgroundGradient.className = "content-background-gradient";
@@ -16,5 +15,5 @@ export default function background(condition) {
 
   background.append(backgroundGradient, image);
 
-  content.append(background);
+  return background;
 }
