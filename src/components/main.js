@@ -1,3 +1,5 @@
+import background from "./background";
+
 export default function mainUi(processedWeather) {
-  document.body.style.height = "100vh";
+  background()
 }
