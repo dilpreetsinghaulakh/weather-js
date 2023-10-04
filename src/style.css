@@ -42,7 +42,7 @@ p {
 
 .hero-image {
   mask-image: linear-gradient(to bottom, #ffffff, #ffffff30, #00000000);
-  mask-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, #ffffff, #ffffff30, #00000000);
   filter: saturate(0.8);
   width: 100vw;
   height: 60vh;

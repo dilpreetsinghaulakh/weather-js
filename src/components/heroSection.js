@@ -15,7 +15,7 @@ export default function heroSection(data) {
   condition.className = "hero-condition";
 
   const lastRow = document.createElement("p");
-  lastRow.textContent = `Hi ${data.hi} | Low ${data.low}`;
+  lastRow.textContent = `Hi ${data.hi}° | Low ${data.low}°`;
   lastRow.className = "hero-last-row"
 
   container.append(city, temp, condition, lastRow);
