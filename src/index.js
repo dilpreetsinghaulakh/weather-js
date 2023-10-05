@@ -10,7 +10,7 @@ var siUnits = true;
 getLocation().then((coordinates) => {
   getWeather(apiKey, coordinates)
     .then((data) => {
-      mainUi(getProcessedWeather(siUnits, data));
+      mainUi(getProcessedWeather(siUnits, data), siUnits);
     })
     .catch((error) => {
       console.log(error);
