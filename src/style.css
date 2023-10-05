@@ -184,7 +184,8 @@ p {
 
 @supports (-webkit-backdrop-filter: blur(5px)) {
   .days-temp-range > p,
-  .grid-card-title {
+  .grid-card-title,
+  .source-container {
     -webkit-mask: linear-gradient(#000 0 0) text;
     mask: linear-gradient(#000 0 0) text;
     -webkit-backdrop-filter: contrast(180%) brightness(120%);
@@ -231,4 +232,14 @@ p {
   font-size: 2rem;
   margin-block: auto;
   text-shadow: #0000002b 1px 1px 10px;
+}
+
+.source-container {
+  font-size: 1.125rem;
+}
+
+.source-container > a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
 }

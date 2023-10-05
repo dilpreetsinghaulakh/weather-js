@@ -2,6 +2,7 @@ import background from "./background";
 import daysSection from "./daysSection";
 import gridItems from "./grid";
 import heroSection from "./heroSection";
+import source from "./source";
 
 export default function mainUi(processedWeather, siUnitsEnable) {
   const content = document.getElementById("content");
@@ -19,7 +20,8 @@ export default function mainUi(processedWeather, siUnitsEnable) {
       low: Math.round(processedWeather.days[1].minTemp),
     }),
     daysSection(processedWeather.days),
-    gridItems(processedWeather.current, siUnitsEnable)
+    gridItems(processedWeather.current, siUnitsEnable),
+    source()
   );
 
   content.append(background(), innerContent);
