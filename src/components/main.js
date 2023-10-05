@@ -1,8 +1,10 @@
 import background from "./background";
+import daysSection from "./daysSection";
 import heroSection from "./heroSection";
 
 export default function mainUi(processedWeather) {
   const content = document.getElementById("content");
+  console.log(processedWeather);
 
   const innerContent = document.createElement("div");
   innerContent.className = "inner-content";
@@ -10,11 +12,12 @@ export default function mainUi(processedWeather) {
   innerContent.append(
     heroSection({
       city: processedWeather.location.name,
-      temp: processedWeather.current.temp,
+      temp: Math.round(processedWeather.current.temp),
       condition: processedWeather.current.condition,
       hi: Math.round(processedWeather.days[1].maxTemp),
       low: Math.round(processedWeather.days[1].minTemp),
-    })
+    }),
+    daysSection(processedWeather.days)
   );
 
   content.append(background(), innerContent);
