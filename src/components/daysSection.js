@@ -26,7 +26,11 @@ export default function daysSection(data) {
     if (i === 0) {
       day.textContent = "Today";
     } else {
-      day.textContent = weekday[today + i];
+      if (today + i > 6) {
+        day.textContent = weekday[(today + i) - 7];
+      } else {
+        day.textContent = weekday[today + i];
+      }
     }
 
     const icon = document.createElement("div");
