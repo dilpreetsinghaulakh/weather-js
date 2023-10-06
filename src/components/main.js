@@ -6,8 +6,6 @@ import source from "./source";
 
 export default function mainUi(processedWeather, siUnitsEnable) {
   const content = document.getElementById("content");
-  console.log(processedWeather);
-
   const innerContent = document.createElement("div");
   innerContent.className = "inner-content";
 
@@ -24,5 +22,11 @@ export default function mainUi(processedWeather, siUnitsEnable) {
     source()
   );
 
-  content.append(background(), innerContent);
+  content.append(
+    background(
+      processedWeather.current.conditionCode,
+      processedWeather.current.isDay
+    ),
+    innerContent
+  );
 }
