@@ -1,10 +1,10 @@
-export default function gridItems(data, siUnitsEnable) {
+export default function gridItems(data) {
   const container = document.createElement("div");
   container.className = "grid-container";
 
   let gridItems = {};
 
-  if (siUnitsEnable) {
+  if (localStorage.getItem("siUnitsEnabled")) {
     gridItems = {
       "Feels Like": data.feelsLike + "°",
       Precipitation: data.precipitation + " mm",

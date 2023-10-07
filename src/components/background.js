@@ -169,6 +169,7 @@ export default function background(condition, isDay) {
     "--bg-gradient-start",
     "#" + urlAndColor.colors[0]
   );
+
   document.documentElement.style.setProperty(
     "--bg-gradient-end",
     "#" + urlAndColor.colors[1]

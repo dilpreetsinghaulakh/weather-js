@@ -4,7 +4,7 @@ import gridItems from "./grid";
 import heroSection from "./heroSection";
 import source from "./source";
 
-export default function mainUi(processedWeather, siUnitsEnable) {
+export default function mainUi(processedWeather) {
   const content = document.getElementById("content");
 
   if (content.hasChildNodes) {
@@ -23,7 +23,7 @@ export default function mainUi(processedWeather, siUnitsEnable) {
       low: Math.round(processedWeather.days[1].minTemp),
     }),
     daysSection(processedWeather.days),
-    gridItems(processedWeather.current, siUnitsEnable),
+    gridItems(processedWeather.current, localStorage.getItem("siUnitsEnabled")),
     source()
   );
 

@@ -3,7 +3,7 @@ import getWeather from "../getWeather";
 import mainUi from "./main";
 import overlay from "./overlay";
 
-export default function search(apiKey, siUnitsEnable) {
+export default function search(apiKey) {
   const searchBar = document.createElement("div");
   searchBar.className = "searchbar-search";
 
@@ -19,7 +19,7 @@ export default function search(apiKey, siUnitsEnable) {
   searchButton.addEventListener("click", () => {
     getWeather(apiKey, input.value)
       .then((data) => {
-        mainUi(getProcessedWeather(siUnitsEnable, data), siUnitsEnable);
+        mainUi(getProcessedWeather(localStorage.getItem("siUnitsEnabled"), data));
         closeContainer();
       })
       .catch((error) => {
