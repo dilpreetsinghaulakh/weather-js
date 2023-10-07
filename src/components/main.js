@@ -6,6 +6,11 @@ import source from "./source";
 
 export default function mainUi(processedWeather, siUnitsEnable) {
   const content = document.getElementById("content");
+
+  if (content.hasChildNodes) {
+    content.innerHTML = "";
+  }
+
   const innerContent = document.createElement("div");
   innerContent.className = "inner-content";
 

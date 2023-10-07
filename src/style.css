@@ -78,6 +78,7 @@ p {
   background: none;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 
 .inner-content {
@@ -198,16 +199,6 @@ p {
   margin-block: 1rem;
 }
 
-@media only screen and (min-width: 500px) {
-  .grid-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .days-card {
-    font-size: 1.125rem;
-    aspect-ratio: 1/1;
-  }
-}
-
 .grid-item-card {
   aspect-ratio: 1/1;
   backdrop-filter: blur(15px) saturate(120%) brightness(90%);
@@ -239,4 +230,107 @@ p {
   color: #fff;
   text-decoration: none;
   font-weight: 700;
+}
+
+.search-container {
+  background: #1b1b1b00;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 750ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.search-close-button {
+  padding: 0.5rem;
+  border-radius: 1000px;
+  background-color: #ffffff30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.search-close-button:hover {
+  background-color: #ffffff60;
+}
+
+.searchbar-search {
+  width: calc(100% - 4.5rem);
+  max-width: calc(640px - 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.search-input-search {
+  flex-grow: 1;
+  padding: 0 1rem;
+  height: 3rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  outline: none;
+  border: 1px #ffffff30 solid;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.search-input-search:focus {
+  border-color: #0064ff;
+}
+
+.search-button-search {
+  padding-inline: 2rem;
+  height: 3rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  background-color: #0064ff;
+  color: #fff;
+  border: #ffffff00 1px solid;
+  cursor: pointer;
+  transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.search-button-search:hover {
+  border: #4791ff 1px solid;
+}
+
+.info-search {
+  font-size: 0.85rem;
+  color: #4c4c4c;
+  text-align: justify;
+  width: calc(100% - 4.5rem);
+  max-width: calc(640px - 2rem);
+}
+
+.stop-scroll {
+  height: 100%;
+  overflow-x: hidden;
+  position: fixed;
+}
+
+
+@media only screen and (min-width: 500px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .days-card {
+    font-size: 1.125rem;
+    aspect-ratio: 1/1;
+  }
+  .searchbar-search {
+    flex-direction: row;
+  }
 }
