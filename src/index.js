@@ -16,7 +16,13 @@ if (!localStorage.getItem("siUnitsEnabled")) {
 getLocation().then((coordinates) => {
   getWeather(apiKey, coordinates)
     .then((data) => {
-      mainUi(getProcessedWeather(JSON.parse(localStorage.getItem("siUnitsEnabled")), data));
+      sessionStorage.setItem("data", JSON.stringify(data));
+      mainUi(
+        getProcessedWeather(
+          JSON.parse(localStorage.getItem("siUnitsEnabled")),
+          data
+        )
+      );
     })
     .catch((error) => {
       console.log(error);
