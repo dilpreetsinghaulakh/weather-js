@@ -4,6 +4,11 @@ export default function overlay(color, ...args) {
 
   document.documentElement.style.setProperty("--bg-gradient-end", color);
 
+  setTimeout(() => {
+    document.querySelector("html").classList.add("stop-scroll");
+  }, 750);
+  scrollTo(0, 0);
+
   const container = document.createElement("div");
   container.className = "search-container";
 

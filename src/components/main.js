@@ -23,7 +23,7 @@ export default function mainUi(processedWeather) {
       low: Math.round(processedWeather.days[1].minTemp),
     }),
     daysSection(processedWeather.days),
-    gridItems(processedWeather.current, localStorage.getItem("siUnitsEnabled")),
+    gridItems(processedWeather.current, JSON.parse(localStorage.getItem("siUnitsEnabled"))),
     source()
   );
 

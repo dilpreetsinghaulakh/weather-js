@@ -19,7 +19,7 @@ export default function search(apiKey) {
   searchButton.addEventListener("click", () => {
     getWeather(apiKey, input.value)
       .then((data) => {
-        mainUi(getProcessedWeather(localStorage.getItem("siUnitsEnabled"), data));
+        mainUi(getProcessedWeather(JSON.parse(localStorage.getItem("siUnitsEnabled")), data));
         closeContainer();
       })
       .catch((error) => {

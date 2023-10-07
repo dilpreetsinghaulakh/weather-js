@@ -4,7 +4,7 @@ export default function gridItems(data) {
 
   let gridItems = {};
 
-  if (localStorage.getItem("siUnitsEnabled")) {
+  if (JSON.parse(localStorage.getItem("siUnitsEnabled"))) {
     gridItems = {
       "Feels Like": data.feelsLike + "°",
       Precipitation: data.precipitation + " mm",

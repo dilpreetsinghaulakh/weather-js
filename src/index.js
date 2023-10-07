@@ -16,7 +16,7 @@ if (!localStorage.getItem("siUnitsEnabled")) {
 getLocation().then((coordinates) => {
   getWeather(apiKey, coordinates)
     .then((data) => {
-      mainUi(getProcessedWeather(localStorage.getItem("siUnitsEnabled"), data));
+      mainUi(getProcessedWeather(JSON.parse(localStorage.getItem("siUnitsEnabled")), data));
     })
     .catch((error) => {
       console.log(error);
@@ -26,19 +26,11 @@ getLocation().then((coordinates) => {
 document
   .querySelector(".search-button-bottom-bar")
   .addEventListener("click", () => {
-    setTimeout(() => {
-      document.querySelector("html").classList.add("stop-scroll");
-    }, 750);
-    scrollTo(0, 0);
     search(apiKey);
   });
 
 document
   .querySelector(".menu-button-bottom-bar")
   .addEventListener("click", () => {
-    setTimeout(() => {
-      document.querySelector("html").classList.add("stop-scroll");
-    }, 750);
-    scrollTo(0, 0);
     settings();
   });
