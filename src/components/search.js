@@ -46,7 +46,7 @@ export default function search(apiKey) {
 
   const info = document.createElement("p");
   info.textContent =
-    "Please enter full name (like Stuttgart), or abbreviation (like NYC), or coordinates by a comma (latitude, longitude) of the location that you want to search.";
+    "Please enter full name (like Stuttgart), or abbreviation (like NYC), or coordinates separated by a comma (latitude, longitude) of the location that you want to search.";
   info.className = "info-search";
 
   overlay("#050505", searchBar, loading, info);
