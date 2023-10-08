@@ -8,7 +8,6 @@ export default async function getLocation() {
 
     return [latitude, longitude];
   } catch (error) {
-    // Return default coordinates (San Francisco)
-    return [37.7790262, -122.419906];
+    return "error";
   }
 }

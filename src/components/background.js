@@ -16,6 +16,7 @@ export default function background(condition, isDay) {
       if (isDay) {
         return {
           url: "vXU_wJ7YmNc/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTB8fGNsb3VkeSUyMHNreXxlbnwwfHx8fDE2OTY1OTkwMzR8MA",
+          colors: ["77bced", "9cbde9"],
         };
       } else {
         return {
