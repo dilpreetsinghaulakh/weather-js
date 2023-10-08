@@ -1,4 +1,5 @@
 import getProcessedWeather from "../getProcessedWeather";
+import about from "./about";
 import mainUi from "./main";
 import overlay, { closeOverlay } from "./overlay";
 
@@ -25,7 +26,7 @@ export default function settings() {
 
   units.append(unitsP, selector);
 
-  overlay("#050505", units);
+  overlay("#050505", units, about());
 
   slide.style.width = selector.offsetWidth / 2 + "px";
 

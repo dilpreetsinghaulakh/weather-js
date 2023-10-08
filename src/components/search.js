@@ -23,9 +23,10 @@ export default function search(apiKey) {
   searchButton.addEventListener("click", () => {
     loading.style.height = "auto";
     loading.style.opacity = "1";
+    loading.style.padding = "0.5rem 1.5rem";
 
-    getWeather(apiKey, input.value)
-      .then((data) => {
+    getWeather(apiKey, input.value).then((data) => {
+      if (!data.error) {
         sessionStorage.setItem("data", JSON.stringify(data));
         mainUi(
           getProcessedWeather(
@@ -34,12 +35,13 @@ export default function search(apiKey) {
           )
         );
         closeOverlay();
-      })
-      .catch(() => {
+      } else {
         input.style.border = "1px solid #ec5634";
         loading.style.height = "0";
         loading.style.opacity = "0";
-      });
+        loading.style.padding = "0";
+      }
+    });
   });
 
   searchBar.append(input, searchButton);
